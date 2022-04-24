@@ -17,7 +17,7 @@ st.write("I always love her forever and forever")
 @st.cache(suppress_st_warning=True)
 def load_data():
     st.write("Cache miss: Data downloading")
-    DB_SQL = st.secrets["DB_SQL"]
+    DB_SQL = st.secrets["db_sql"]
     engine = sqlalchemy.create_engine(DB_SQL)
     df = pd.read_sql('SELECT * FROM port_allocate_test2', engine, index_col=['Time'])
     numeric_df = df.select_dtypes(['float','int'])
