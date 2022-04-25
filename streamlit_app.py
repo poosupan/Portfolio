@@ -45,5 +45,6 @@ if checkbox:
 
 #feature_selection = #st.sidebar.multiselect(label = 'Features to polt', options = numeric_cols, default = 'Balance')
 df_feature = df[feature_selection]
-plotly_figure = px.line(df_feature, x = df_feature.index, y = feature_selection, title = 'Pecentage change', labels= False )
+plotly_figure = px.line(df_feature, x = df_feature.index, y = feature_selection, title = 'Pecentage change')
+plotly_figure.update_layout(showlegend=False)
 st.plotly_chart(plotly_figure, use_container_width=True)
