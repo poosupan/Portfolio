@@ -10,6 +10,8 @@ import plotly.graph_objects as go
 import plotly.express as px
 import sqlalchemy
 
+st.set_page_config(layout="wide", page_icon="💬", page_title="Portfolio testing")
+
 st.subheader("Hello i'm POS")
 st.title("I love Gam very much")
 st.write("I always love her forever and forever")
@@ -18,7 +20,6 @@ DB_SQL = st.secrets["db_sql"]
 
 @st.cache(suppress_st_warning=True)
 def load_data():
-    st.write("Cache miss: Data downloading")
     engine = sqlalchemy.create_engine(DB_SQL)
     df = pd.read_sql('SELECT * FROM port_allocate_test2', engine, index_col=['Time'])
     numeric_df = df.select_dtypes(['float','int'])
