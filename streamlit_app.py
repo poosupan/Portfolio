@@ -52,6 +52,5 @@ with col2:
 
     plotly_figure.update_layout(
         showlegend=False,
-        margin=dict(t=30,l=0,b=20,r=0))
-    plotly_figure.update_layout(width=int(200))
-    st.plotly_chart(plotly_figure, use_container_width=True)
+        margin=dict(t=30,l=0,b=50,r=0))
+    st.plotly_chart(plotly_figure)
