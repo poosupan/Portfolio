@@ -37,14 +37,15 @@ def relative(df):
 
 df, numeric_cols, text_cols = load_data()
 
-checkbox = st.sidebar.checkbox(label = 'Compare with BTC')
+checkbox = st.checkbox(label = 'Compare with BTC')
 feature_selection = ['Balance']
 if checkbox:
     #st.write(df)
     feature_selection = ['Balance', 'BTC_price']
-
-#feature_selection = #st.sidebar.multiselect(label = 'Features to polt', options = numeric_cols, default = 'Balance')
-df_feature = df[feature_selection]
-plotly_figure = px.line(df_feature, x = df_feature.index, y = feature_selection, title = 'Pecentage change')
-plotly_figure.update_layout(showlegend=False)
-st.plotly_chart(plotly_figure, use_container_width=True)
+col1, col2, col3 = st.beta_columns((1,8,1))
+with col2:
+    #feature_selection = #st.sidebar.multiselect(label = 'Features to polt', options = numeric_cols, default = 'Balance')
+    df_feature = df[feature_selection]
+    plotly_figure = px.line(df_feature, x = df_feature.index, y = feature_selection, title = 'Pecentage change')
+    plotly_figure.update_layout(showlegend=False)
+    st.plotly_chart(plotly_figure, use_container_width=True)
