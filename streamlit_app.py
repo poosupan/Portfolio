@@ -51,5 +51,5 @@ with col2:
     plotly_figure.update_layout(annotations=[], overwrite=True)
     plotly_figure.update_layout(
         showlegend=False,
-        margin=dict(l=100,r=100))
+        autosize = True)
     st.plotly_chart(plotly_figure, use_container_width=True)
