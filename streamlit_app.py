@@ -53,6 +53,6 @@ with col2:
     plotly_figure.update_layout(
         showlegend=False,
         #margin=dict(t=100,l=100,b=100,r=100),
-        legend_borderwidth = 0,
+        autosize = 1,
         bargap = 0)
     st.plotly_chart(plotly_figure, use_container_width=True)
