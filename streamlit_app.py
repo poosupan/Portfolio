@@ -51,7 +51,8 @@ with col2:
     #plotly_figure.update_yaxes(visible=False, fixedrange=True)
 
     plotly_figure.update_layout(
-        margin=dict(t=0,l=0,b=0,r=0))
+        showlegend=False,
+        margin=dict(t=0,l=0,b=10,r=0))
 
     plotly_figure.update_layout(legend=dict(
             orientation="h",
