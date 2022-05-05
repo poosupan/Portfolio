@@ -50,7 +50,16 @@ with col2:
 
     #plotly_figure.update_yaxes(visible=False, fixedrange=True)
 
-    plotly_figure.update_layout(
-        showlegend=False,
-        margin=dict(t=30,l=0,b=50,r=0))
+    #plotly_figure.update_layout(
+    #    showlegend=False,
+    #    margin=dict(t=30,l=0,b=50,r=0))
+
+    plotly_figure.update_layout(legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=-0.7,
+            xanchor="left",
+            x=0.01
+            ))
+
     st.plotly_chart(plotly_figure, use_container_width=True)
