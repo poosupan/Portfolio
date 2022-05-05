@@ -48,7 +48,7 @@ with col2:
     df_feature = df[feature_selection]
     plotly_figure = px.line(df_feature, x = df_feature.index, y = feature_selection, title = 'Pecentage change')
 
-    plotly_figure.update_yaxes(visible=False, fixedrange=True)
+    #plotly_figure.update_yaxes(visible=False, fixedrange=True)
 
     plotly_figure.update_layout(
         showlegend=False,
