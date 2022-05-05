@@ -46,20 +46,12 @@ col1, col2, col3 = st.columns((.5,9,.5))
 with col2:
     #feature_selection = #st.sidebar.multiselect(label = 'Features to polt', options = numeric_cols, default = 'Balance')
     df_feature = df[feature_selection]
-    plotly_figure = px.line(df_feature, x = df_feature.index, y = feature_selection, title = 'Pecentage change')
+    plotly_figure = px.line(df_feature, x = df_feature.index, y = feature_selection)
 
     #plotly_figure.update_yaxes(visible=False, fixedrange=True)
 
     plotly_figure.update_layout(
         showlegend=False,
-        margin=dict(t=0,l=0,b=10,r=0))
-
-    plotly_figure.update_layout(legend=dict(
-            orientation="h",
-            yanchor="bottom",
-            y=-0.7,
-            xanchor="left",
-            x=0.01
-            ))
+        margin=dict(t=0,l=0,b=0,r=0))
 
     st.plotly_chart(plotly_figure, use_container_width=True)
