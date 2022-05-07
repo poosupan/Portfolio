@@ -18,7 +18,7 @@ st.write("I always love her forever and forever")
 
 DB_SQL = st.secrets["db_sql"]
 
-#@st.cache(suppress_st_warning=True)
+@st.cache(suppress_st_warning=True)
 def load_data():
     engine = sqlalchemy.create_engine(DB_SQL)
     df = pd.read_sql('SELECT * FROM port_allocate_test2', engine, index_col=['Time'])
@@ -51,7 +51,7 @@ with col2:
     #plotly_figure.update_yaxes(visible=False, fixedrange=True)
 
     plotly_figure.update_layout(
-        showlegend=False
-        #,margin=dict(t=0,l=0,b=0,r=0))
-        )
+        showlegend=False,
+        margin=dict(t=0,l=0,b=0,r=0))
+        
     st.plotly_chart(plotly_figure, use_container_width=True)
