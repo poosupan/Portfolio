@@ -18,7 +18,7 @@ st.write("I always love her forever and forever")
 
 DB_SQL = st.secrets["db_sql"]
 
-@st.cache(suppress_st_warning=True)
+#@st.cache()
 def load_data():
     engine = sqlalchemy.create_engine(DB_SQL)
     df = pd.read_sql('SELECT * FROM port_allocate_test2', engine, index_col=['Time'])
